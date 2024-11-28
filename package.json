@@ -7,6 +7,7 @@
   "description": "Full Stack Open",
 
   "main": "src/index.js",
+
   "type": "module",
 
   "scripts": {
@@ -128,6 +129,6 @@
     ]
 
   }
-  
+
 }
 
