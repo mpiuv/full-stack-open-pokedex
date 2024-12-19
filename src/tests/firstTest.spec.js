@@ -13,3 +13,12 @@ test.describe('Pokedex', () => {
     await expect(element).toBeVisible()
   })
 })
+
+test.describe('Pidgeotto', () => {
+  test('Pidgeotto page can be opened', async ({ page }) => {
+    await page.goto('http://localhost:8080/pokemon/pidgeotto')
+    const element1 = await page.locator('text=pidgeotto')
+    await element1.waitFor({ state: 'visible' })
+    await expect(element1).toBeVisible()
+  })
+})
