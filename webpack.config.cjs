@@ -3,8 +3,6 @@ const path = require('path')
 
 module.exports = {
   entry: './src/index.jsx',
-  resolve: {
-    extensions: ['.js', '.jsx'] },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -45,6 +43,9 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
+    allowedHosts: [
+      '.onrender.com',
+    ],
   },
   plugins: [
     new HtmlWebPackPlugin({
