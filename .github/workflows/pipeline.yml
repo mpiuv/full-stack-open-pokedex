@@ -41,7 +41,13 @@ jobs:
     env:
       DRY_RUN: true
       GIT_DISCOVERY_ACROSS_FILESYSTEM: 1
+    permissions:
+      contents: write
     steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: '0'
+
       - name: Bump version and push tag
         uses: anothrNick/github-tag-action@1.71.0
         env:
