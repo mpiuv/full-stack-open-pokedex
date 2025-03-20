@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - 11.15-adding-versioning
   pull_request:
     branches: [main]
     types: [opened, synchronize]
@@ -37,9 +38,13 @@ jobs:
   tag_release:
     needs: [simple_deployment_pipeline]
     runs-on: ubuntu-latest
-    env:
-      DRY_RUN: true
+    permissions:
+      contents: write
     steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: '0'
+
       - name: Bump version and push tag
         uses: anothrNick/github-tag-action@1.71.0
         env:
