@@ -38,9 +38,6 @@ jobs:
   tag_release:
     needs: [simple_deployment_pipeline]
     runs-on: ubuntu-latest
-    env:
-      DRY_RUN: true
-      GIT_DISCOVERY_ACROSS_FILESYSTEM: 1
     permissions:
       contents: write
     steps:
