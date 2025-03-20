@@ -39,6 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DRY_RUN: true
+      GIT_DISCOVERY_ACROSS_FILESYSTEM: 1
     steps:
       - name: Bump version and push tag
         uses: anothrNick/github-tag-action@1.71.0
